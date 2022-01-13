@@ -1,5 +1,6 @@
 import { Flex, FlexProps } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
+import { Sidebar } from '..'
 
 interface LayoutProps extends FlexProps {
   children: ReactNode
@@ -7,8 +8,9 @@ interface LayoutProps extends FlexProps {
 
 const Layout = ({ children, ...rest }: LayoutProps) => {
   return (
-    <Flex direction='column' h='100vh' align='center' w='100vw' {...rest}>
-      {children}
+    <Flex align='center' w='100vw' h='100vh'  {...rest}>
+      <Sidebar />
+        {children}
     </Flex>
   )
 }

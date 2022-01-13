@@ -3,9 +3,8 @@ import { Layout } from "../components";
 
 export default function Home() {
   return (
-    <Layout justify='center'>
-      <Box maxWidth={720} px={5}>
-        {/* <Flex> */}
+    <Layout>
+      <Box maxWidth={720} px={5} ml={10}>
           <Text fontSize={68} lineHeight='80px' fontWeight={600}>
             Oi, meu nome é
             <br />
@@ -18,7 +17,6 @@ export default function Home() {
               </Text>
             </Box>
           </Text>
-          {/* </Flex> */}
         <Flex mt={10}>
           <Text fontSize={24} lineHeight='28px'>
             Sou um desenvolvedor front-end especializado em criar experiências digitais excepcionais.
