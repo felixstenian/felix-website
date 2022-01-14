@@ -18,7 +18,3 @@ export default class MyDocument extends Document {
         )
     }
 }
-
-// font-family: 'Inter', sans-serif;
-// font-family: 'Roboto', sans-serif;
-// font-family: 'Roboto Mono', monospace;
