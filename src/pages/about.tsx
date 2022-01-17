@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text, Stack, List, ListItem } from '@chakra-ui/react'
 import React from 'react'
-import { Layout } from '../components'
+import { Sidebar } from '../components'
 
 const About = () => {
   const techs = [
@@ -12,20 +12,23 @@ const About = () => {
   ]
 
   return (
-    <Layout mt={10}>
-        <Flex margin={[5, 10, '0 0 0 150px', '0 auto']} px={[2, 4, 10]}  flexDir='column'>
-          <Text fontSize={68} lineHeight='80px' fontWeight={600}>
-            Oi, meu nome é
-            <br />
-            <Box display='flex' mt={5}>
-              <Box>
-                <Image src="/logo_1x.png" alt="Felix-Logo" position='relative' />
+    <Flex>
+      <Sidebar />
+        <Flex px={[5, 10, 15, 20]} align={['flex-end', 'flex-end', 'flex-end', 'center']} flexDir='column' w='100%' mt={[20,20, 10]}>
+          <Box maxWidth={590} w='100%'>
+            <Text fontSize={68} lineHeight='80px' fontWeight={600}>
+              Oi, meu nome é
+              <br />
+              <Box display='flex' mt={5}>
+                <Box>
+                  <Image src="/logo_1x.png" alt="Felix-Logo" position='relative' />
+                </Box>
+                <Text pt={4}>    
+                  elix.
+                </Text>
               </Box>
-              <Text pt={4}>    
-                elix.
-              </Text>
-            </Box>
-          </Text>
+            </Text>
+          </Box>
 
           <Stack mt={10} spacing={4}  maxWidth={610} mb={16}>
             <Text fontSize={22}>
@@ -62,7 +65,7 @@ const About = () => {
             </List>
           </Stack>
         </Flex>
-    </Layout>
+    </Flex>
   )
 }
 
