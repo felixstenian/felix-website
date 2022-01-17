@@ -4,7 +4,20 @@ import { motion } from 'framer-motion'
 
 const MotionBox = motion(Box)
 
-const CardProject = ({ projects }) => {
+type Project = {
+  title: string,
+  thumb: string,
+  description: string,
+  tags: [],
+  repo: string,
+  link: string
+
+}
+interface CardProjectProps {
+  projects: Project[]
+}
+
+const CardProject = ({ projects }: CardProjectProps) => {
 
   const isWideVersion = useBreakpointValue({
     base: false,
