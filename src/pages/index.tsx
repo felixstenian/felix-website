@@ -1,9 +1,10 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
-import { Layout } from "../components";
+import { Sidebar } from "../components";
 
 export default function Home() {
   return (
-    <Layout>
+    <Flex>
+      <Sidebar />
         <Flex maxWidth={720} h='100vh' margin={[5, 5, '0 200px']}  flexDir='column' justify='center' >
             <Text fontSize={68} lineHeight='80px' fontWeight={600}>
               Oi, meu nome é
@@ -39,6 +40,6 @@ export default function Home() {
             CONTATO
           </Button>
         </Flex>
-    </Layout>
+    </Flex>
   )
 }
