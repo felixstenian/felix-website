@@ -1,6 +1,6 @@
 import { Link, Text, LinkProps, Icon } from "@chakra-ui/react"
 import { ReactNode , ElementType} from "react"
-import NextLink from 'next/link'
+import ActiveLink from "../ActiveLink"
 
 interface NavLinkProps extends LinkProps {
   icon?: ElementType,
@@ -10,7 +10,7 @@ interface NavLinkProps extends LinkProps {
 
 export const NavLink = ({ icon, href, children, ...rest }: NavLinkProps) => {
   return (
-    <NextLink href={href}  passHref>
+    <ActiveLink href={href}  passHref>
       <Link 
         {...rest}
         _hover={{
@@ -32,6 +32,6 @@ export const NavLink = ({ icon, href, children, ...rest }: NavLinkProps) => {
           </Text>
         }
       </Link>
-    </NextLink>
+    </ActiveLink>
   )
 }
