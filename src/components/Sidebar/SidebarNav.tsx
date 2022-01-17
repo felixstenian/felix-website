@@ -50,7 +50,7 @@ const SidebarNav = () => {
 
         <Box w='100%' align='center'>
           <Divider mb={3} borderColor='rgba(105, 255, 219, 0.2)' />
-          <NavLink href='/projetos' >
+          <NavLink href='/projects' >
             Projetos
           </NavLink>
         </Box>
