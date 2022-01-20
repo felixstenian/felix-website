@@ -5,13 +5,21 @@ import { motion } from 'framer-motion'
 const MotionBox = motion(Box)
 
 type Project = {
-  title: string,
-  thumb: string,
-  description: string,
   tags: [],
-  repo: string,
-  link: string
-
+  uid: string,
+  data: {
+    title: string,
+    description: string,
+    thumb: {
+      url: string
+    },
+    repo: {
+      url: string
+    },
+    link: {
+      url: string
+    }
+  }
 }
 interface CardProjectProps {
   projects: Project[]
@@ -28,11 +36,12 @@ const CardProject = ({ projects }: CardProjectProps) => {
   return (
     <>
       { projects.map((project, index) => {
+        const { title, description, thumb, repo, link } = project?.data
           return (
             <>
               {(index%2 == 0) ?
                 <Flex 
-                  key={project.title}
+                  key={project?.uid}
                   maxWidth={914}
                   px={5}
                   flexDir={['column', 'column', 'column', 'row']} 
@@ -40,17 +49,17 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   mt={['70px', 50]}
                   ml={[0, 0, 8, 0]}
                 >
-                  { !isWideVersion &&  <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={5}> {project.title} </Text>}
+                  { !isWideVersion &&  <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={5}> {title} </Text>}
                   <Flex w={['100%', '100%', '85%', '60%']} pl={[5, 5, 0]} >
                     <MotionBox transition={{ duration: 0.3 }} whileHover={{ scale: 1.05 }} >
-                      <Image src={project.thumb} alt={`Projeto ${project.title}`} _hover={{ w: '110%' }} />
+                      <Image src={thumb?.url} alt={`Projeto ${title}`} _hover={{ w: '110%' }} />
                     </MotionBox>
                   </Flex>
                   <Flex flexDir='column' justify='space-around' align='flex-end' w={['100%', '100%', '85%', '40%']} pr={[5, 5, 0]}>
-                    { isWideVersion &&  <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={2}> {project.title} </Text>}
+                    { isWideVersion &&  <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={2}> {title} </Text>}
                     <Box textAlign='right' bg='#11233F' p={5} ml={[0, 0, -3]} mt={[-3, -3, -3, 0]}>
                       <Text fontSize={[16, 18]} lineHeight='18px' >
-                        {project.description}
+                        {description}
                       </Text>
                     </Box>
                     <HStack mt={2}>
@@ -59,10 +68,10 @@ const CardProject = ({ projects }: CardProjectProps) => {
                       ))}
                     </HStack>
                     <HStack mt={2}>
-                        <Link href={project.repo} target='_blank'>
+                        <Link href={repo?.url} target='_blank'>
                           <Icon as={RiGithubFill} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
                         </Link>
-                        <Link href={project.link} target='_blank'>
+                        <Link href={link?.url} target='_blank'>
                           <Icon as={RiLinkM} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
                         </Link>
                     </HStack>
@@ -70,7 +79,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                 </Flex>
                 :
                 <Flex 
-                  key={project.title}
+                  key={title}
                   maxWidth={914}
                   px={5}
                   flexDir={['column', 'column', 'column', 'row']}
@@ -80,19 +89,19 @@ const CardProject = ({ projects }: CardProjectProps) => {
                 >
                   { !isWideVersion &&  (
                     <>
-                      <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={5}>{project.title}</Text>
+                      <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={5}>{title}</Text>
                       <Flex w={['100%', '100%', '85%', '60%']} pl={[5, 5, 0]}>
                       <MotionBox transition={{ duration: 0.3 }} whileHover={{ scale: 1.05 }}>
-                        <Image src={project.thumb} alt={`Projeto ${project.title}`}  />
+                        <Image src={thumb?.url} alt={`Projeto ${title}`}  />
                       </MotionBox>
                       </Flex>
                     </>
                   )}
                   <Flex flexDir='column' justify='space-around' align={['flex-end', 'flex-end', 'flex-start']} w={['100%', '100%', '85%', '40%']} pr={[5, 5, 0]}>
-                    { isWideVersion &&  <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={2}> {project.title} </Text>}
+                    { isWideVersion &&  <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={2}> {title} </Text>}
                     <Box textAlign='right' bg='#11233F' p={5} ml={[0, 0, -3, 0]} mr={[0, 0, 0, -3]} mt={[-3, -3, -3, 0]} position='relative'>
                       <Text fontSize={[16, 18]} lineHeight='18px' >
-                        {project.description}
+                        {description}
                       </Text>
                     </Box>
                     <HStack mt={2}>
@@ -101,10 +110,10 @@ const CardProject = ({ projects }: CardProjectProps) => {
                       ))}
                     </HStack>
                     <HStack mt={2}>
-                        <Link href={project.repo} target='_blank'>
+                        <Link href={repo?.url} target='_blank'>
                           <Icon as={RiGithubFill} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
                         </Link>
-                        <Link href={project.link} target='_blank'>
+                        <Link href={link?.url} target='_blank'>
                           <Icon as={RiLinkM} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
                         </Link>
                     </HStack>
@@ -112,7 +121,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   { isWideVersion &&
                     <Flex w={['100%', '100%', '60%']} pl={[5, 5, 0]}>
                       <MotionBox transition={{ duration: 0.3 }} whileHover={{ scale: 1.05 }}>
-                        <Image src={project.thumb} alt={`Projeto ${project.title}`}  />
+                        <Image src={thumb?.url} alt={`Projeto ${title}`}  />
                       </MotionBox>
                     </Flex>
                   }
