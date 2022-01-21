@@ -1,9 +1,16 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
-import { Sidebar } from "../components";
+import { Box, Button, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Header, Sidebar } from "../components";
 
 export default function Home() {
+  const isWideVersion = useBreakpointValue({
+    base: true,
+    md: false,
+    lg: false
+  })
+
   return (
     <Flex>
+      { !!isWideVersion && <Header /> }
       <Sidebar />
         <Flex maxWidth={720} h='100vh' margin={[5, 5, '0 200px']}  flexDir='column' justify='center' >
             <Text fontSize={68} lineHeight='80px' fontWeight={600}>

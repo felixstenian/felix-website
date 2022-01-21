@@ -1,6 +1,6 @@
-import { Box, Button, Flex } from '@chakra-ui/react'
+import { Box, Button, Flex, useBreakpointValue } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
-import { CardProject, Sidebar } from '../components'
+import { CardProject, Header, Sidebar } from '../components'
 import { getPrismicClient } from '../services/prismic'
 import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
@@ -38,6 +38,12 @@ const Projects = ({ result }: ProjectProps) => {
   const [projects, setProjects] = useState<Project[]>(data)
   const [nextPage, setNextPage] = useState<string>(next_page)
 
+  const isWideVersion = useBreakpointValue({
+    base: true,
+    md: false,
+    lg: false
+  })
+
   const pagination = (): void => {
     fetch(nextPage)
       .then(response => response.json())
@@ -62,8 +68,9 @@ const Projects = ({ result }: ProjectProps) => {
   
   return (
     <Flex>
+      { !!isWideVersion && <Header /> }
       <Sidebar />
-      <Flex align='center' w='100%' flexDir='column' mb={50}>
+      <Flex align='center' w='100%' flexDir='column' mx={50} mt={[20,20,0]}>
         <CardProject projects={projects} />
         <Box mt={50}>
           { !!nextPage &&

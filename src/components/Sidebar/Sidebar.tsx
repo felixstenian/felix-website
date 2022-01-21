@@ -1,4 +1,4 @@
-import { Icon, useBreakpointValue, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, IconButton } from "@chakra-ui/react"
+import { Icon, useBreakpointValue, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, IconButton, Text, Flex, Box } from "@chakra-ui/react"
 import { RiMenuLine } from 'react-icons/ri'
 import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext"
 import SidebarNav from "./SidebarNav"
@@ -33,6 +33,7 @@ const Sidebar = () => {
 
               <DrawerBody>
                 <SidebarNav />
+
               </DrawerBody>
             </DrawerContent>
           </DrawerOverlay>

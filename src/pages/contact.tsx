@@ -1,12 +1,19 @@
-import { Box, Button, Flex, FormControl, FormLabel, Input, Link, Text, Textarea, VStack } from '@chakra-ui/react'
-import { Sidebar } from '../components'
+import { Box, Button, Flex, FormControl, FormLabel, Input, Link, Text, Textarea, useBreakpointValue, VStack } from '@chakra-ui/react'
+import { Header, Sidebar } from '../components'
 import { NavLink } from '../components/Sidebar/NavLink'
 
 const Contato = () => {
+  const isWideVersion = useBreakpointValue({
+    base: true,
+    md: false,
+    lg: false
+  })
+  
   return (
     <Flex>
+      { !!isWideVersion && <Header /> }
       <Sidebar />
-      <Flex flexDir='column' w='100%' h='100vh' align={['center', 'center', 'flex-end', 'center']} justify={['', '', 'center']} mt={[20, 20, 0]} px={[5, 5, '5%', 0]}>
+      <Flex flexDir='column' w='100%' h='100vh' align={['center', 'center', 'flex-end', 'center']} justify={['', '', 'center']} mt={[40, 40, 0]} px={[5, 5, '5%', 0]}>
         <Box maxWidth={580}>
           <Text fontSize={[42, 46]} fontWeight={600} lineHeight='54px'>Gostaria de entrar em contato comigo ?</Text>
           <Text 

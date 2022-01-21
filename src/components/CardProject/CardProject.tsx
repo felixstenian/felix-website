@@ -45,7 +45,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   maxWidth={914}
                   px={5}
                   flexDir={['column', 'column', 'column', 'row']} 
-                  align='flex-end'
+                  align='flex-start'
                   mt={['70px', 50]}
                   ml={[0, 0, 8, 0]}
                 >
@@ -83,7 +83,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   maxWidth={914}
                   px={5}
                   flexDir={['column', 'column', 'column', 'row']}
-                  align='flex-end'
+                  align='flex-start'
                   mt={50}
                   ml={[0, 0, 8, 0]}
                 >
