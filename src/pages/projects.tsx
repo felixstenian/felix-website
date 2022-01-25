@@ -5,7 +5,9 @@ import { getPrismicClient } from '../services/prismic'
 import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
+const MotionFlex = motion(Flex)
 interface Project {
   uid: string,
   tags: [],
@@ -70,7 +72,25 @@ const Projects = ({ result }: ProjectProps) => {
     <Flex>
       { !!isWideVersion && <Header /> }
       <Sidebar />
-      <Flex align='center' w='100%' flexDir='column' mx={50} mt={[20,20,0]}>
+      <MotionFlex 
+        align='center' 
+        w='100%' 
+        flexDir='column' 
+        mx={50} 
+        mt={[20,20,0]}
+
+        initial="initial"
+        animate="animate"
+        variants={{
+          initial: {
+            opacity: 0,
+          },
+          animate: {
+            opacity: 1,
+          },
+        }}
+        transition={{ duration: 0.5 }}
+      >
         <CardProject projects={projects} />
         <Box mt={50}>
           { !!nextPage &&
@@ -93,7 +113,7 @@ const Projects = ({ result }: ProjectProps) => {
             </Button>
           }
         </Box>
-      </Flex>
+      </MotionFlex>
     </Flex>
   )
 }
