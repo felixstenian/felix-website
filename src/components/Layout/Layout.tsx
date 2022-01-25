@@ -13,10 +13,6 @@ const Layout = ({ children, ...rest }: LayoutProps) => {
       <Flex w='100%' {...rest}>
         {children}
       </Flex>
-      {/* <Box></Box> */}
-      {/* <Box> */}
-      {/* </Box> */}
-      {/* <Box /> */}
     </Flex>
   )
 }

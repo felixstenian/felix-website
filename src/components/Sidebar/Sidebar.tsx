@@ -1,7 +1,16 @@
-import { Icon, useBreakpointValue, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, IconButton, Text, Flex, Box } from "@chakra-ui/react"
+import {
+  Icon,
+  useBreakpointValue,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerBody,
+  IconButton
+} from '@chakra-ui/react'
 import { RiMenuLine } from 'react-icons/ri'
-import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext"
-import SidebarNav from "./SidebarNav"
+import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext'
+import SidebarNav from './SidebarNav'
 
 const Sidebar = () => {
   const { isOpen, onClose, onOpen } = useSidebarDrawer()
@@ -26,14 +35,13 @@ const Sidebar = () => {
           position='absolute'
           top={3}
         />
-        <Drawer isOpen={isOpen} placement="left" onClose={onClose} size='xs' blockScrollOnMount={true}>
+        <Drawer isOpen={isOpen} placement='left' onClose={onClose} size='xs' blockScrollOnMount={true}>
           <DrawerOverlay>
             <DrawerContent bg='#11233F'>
-              <DrawerCloseButton fontSize={18} color='#69FFDB'/>
+              <DrawerCloseButton fontSize={18} color='#69FFDB' />
 
               <DrawerBody>
                 <SidebarNav />
-
               </DrawerBody>
             </DrawerContent>
           </DrawerOverlay>
@@ -41,9 +49,7 @@ const Sidebar = () => {
       </>
     )
   }
-  return (
-    <SidebarNav />
-  )
+  return <SidebarNav />
 }
 
 export default Sidebar
