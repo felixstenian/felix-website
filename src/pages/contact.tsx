@@ -11,7 +11,7 @@ import {
   useBreakpointValue,
   VStack
 } from '@chakra-ui/react'
-import { Header, Sidebar } from '../components'
+import { CopyRight, Header, Sidebar } from '../components'
 import { motion } from 'framer-motion'
 
 const MotionFlex = motion(Flex)
@@ -58,7 +58,7 @@ const Contato = () => {
               target='_blank'
               _hover={{
                 textDecoration: 'none',
-                color: '#69FFDB'
+                color: 'primary'
               }}
             >
               felixstenian.dev@gmail.com.br
@@ -74,14 +74,14 @@ const Contato = () => {
                 id='nome'
                 placeholder='Seu nome'
                 bgColor='gray.900'
-                borderColor='#69FFDB'
-                focusBorderColor='#69FFDB'
+                borderColor='primary'
+                focusBorderColor='primary'
               />
             </FormControl>
 
             <FormControl isRequired>
               <FormLabel htmlFor='Email'>Email</FormLabel>
-              <Input name='email' id='email' placeholder='Seu email' borderColor='#69FFDB' focusBorderColor='#69FFDB' />
+              <Input name='email' id='email' placeholder='Seu email' borderColor='primary' focusBorderColor='primary' />
             </FormControl>
 
             <FormControl isRequired>
@@ -90,8 +90,8 @@ const Contato = () => {
                 name='mensagem'
                 id='messagem'
                 placeholder='Sua mensagem'
-                borderColor='#69FFDB'
-                focusBorderColor='#69FFDB'
+                borderColor='primary'
+                focusBorderColor='primary'
               />
             </FormControl>
 
@@ -100,10 +100,10 @@ const Contato = () => {
               height={50}
               fontWeight={300}
               variant='outline'
-              borderColor='#69FFDB'
-              color='#69FFDB'
+              borderColor='primary'
+              color='primary'
               _hover={{
-                bg: '#69FFDB',
+                bg: 'primary',
                 color: '#0A1A2E',
                 transition: 'background 0.5s',
                 fontWeight: 600
@@ -114,6 +114,7 @@ const Contato = () => {
           </VStack>
         </Box>
       </MotionFlex>
+      <CopyRight />
     </Flex>
   )
 }

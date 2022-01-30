@@ -1,5 +1,5 @@
 import { Box, Button, Flex, flexbox, Image, Text, useBreakpointValue } from '@chakra-ui/react'
-import { Header, Sidebar } from '../components'
+import { CopyRight, Header, Sidebar } from '../components'
 import { motion } from 'framer-motion'
 
 const MotionFlex = motion(Flex)
@@ -63,10 +63,10 @@ export default function Home() {
           height={50}
           fontWeight={300}
           variant='outline'
-          borderColor='#69FFDB'
-          color='#69FFDB'
+          borderColor='primary'
+          color='primary'
           _hover={{
-            bg: '#69FFDB',
+            bg: 'primary',
             color: '#0A1A2E',
             transition: 'background 0.5s'
           }}
@@ -74,6 +74,7 @@ export default function Home() {
           CONTATO
         </Button>
       </MotionFlex>
+      <CopyRight />
     </Flex>
   )
 }

@@ -1,6 +1,6 @@
 import { Box, Button, Flex, useBreakpointValue } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
-import { CardProject, Header, Sidebar } from '../components'
+import { CardProject, CopyRight, Header, Sidebar } from '../components'
 import { getPrismicClient } from '../services/prismic'
 import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
@@ -99,11 +99,11 @@ const Projects = ({ result }: ProjectProps) => {
               height={50} 
               fontWeight={300} 
               variant='outline' 
-              borderColor='#69FFDB' 
-              color='#69FFDB'
+              borderColor='primary' 
+              color='primary'
               onClick={pagination}
               _hover={{
-                bg: '#69FFDB',
+                bg: 'primary',
                 color: '#0A1A2E',
                 transition: 'background 0.5s',
                 fontWeight: 600
@@ -114,6 +114,7 @@ const Projects = ({ result }: ProjectProps) => {
           }
         </Box>
       </MotionFlex>
+      <CopyRight />
     </Flex>
   )
 }
