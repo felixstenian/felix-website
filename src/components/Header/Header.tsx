@@ -1,12 +1,6 @@
-import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 
 const Header = () => {
-  const isWideVersion = useBreakpointValue({
-    base: false,
-    md: false,
-    lg: true
-  })
   return (
     <Flex w='100%' justify='center' position='absolute' my={3}>
       <Box align='center'>

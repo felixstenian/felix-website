@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text, Stack, List, ListItem, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
-import { Header, Sidebar } from '../components'
+import { CopyRight, Header, Sidebar } from '../components'
 import { motion } from 'framer-motion'
 
 const MotionFlex = motion(Flex)
@@ -72,7 +72,7 @@ const About = () => {
             {techs.map(tech => (
               <ListItem key={tech}>
                 <Flex align='center'>
-                  <Text fontFamily='Roboto Mono' fontSize={32} fontWeight={700} color='#69FFDB'>
+                  <Text fontFamily='Roboto Mono' fontSize={32} fontWeight={700} color='primary'>
                     {'>'}
                   </Text>
                   <Text fontSize={22} ml={2}>
@@ -84,6 +84,7 @@ const About = () => {
           </List>
         </Stack>
       </MotionFlex>
+      <CopyRight />
     </Flex>
   )
 }

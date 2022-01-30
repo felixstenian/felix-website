@@ -31,14 +31,14 @@ const Sidebar = () => {
           variant='unstyled'
           onClick={onOpen}
           ml={6}
-          color='#69FFDB'
+          color='primary'
           position='absolute'
           top={3}
         />
         <Drawer isOpen={isOpen} placement='left' onClose={onClose} size='xs' blockScrollOnMount={true}>
           <DrawerOverlay>
             <DrawerContent bg='#11233F'>
-              <DrawerCloseButton fontSize={18} color='#69FFDB' />
+              <DrawerCloseButton fontSize={18} color='primary' />
 
               <DrawerBody>
                 <SidebarNav />
