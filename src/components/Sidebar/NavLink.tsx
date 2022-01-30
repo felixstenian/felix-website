@@ -24,7 +24,7 @@ export const NavLink = ({ icon, href, children, ...rest }: NavLinkProps) => {
             lineHeight='26px'
             _hover={{
               textDecoration: 'none',
-              color: '#69FFDB',
+              color: 'primary',
               fontWeight: 600
             }}
           >

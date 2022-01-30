@@ -18,7 +18,7 @@ const ActiveLink = ({ children, ...rest }: ActiveLinkProps) => {
   return (
     <Link {...rest}>
       {cloneElement(children, {
-        color: isActive ? '#69FFDB' : 'gray.200',
+        color: isActive ? 'primary' : 'gray.200',
         fontWeight: isActive ? '600' : '400'
       })}
     </Link>

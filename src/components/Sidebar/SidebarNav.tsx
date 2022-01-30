@@ -15,7 +15,7 @@ const SidebarNav = () => {
       flexDir='column'
       position='fixed'
     >
-      <Stack spacing={2} align='center' mt={10} borderBottom='1px solid' borderColor='#69FFDB' w='100%'>
+      <Stack spacing={2} align='center' mt={10} borderBottom='1px solid' borderColor='primary' w='100%'>
         <Image src='/logo_1x.png' alt='Felix Logo' />
         <Text fontSize={26} lineHeight='30px' fontWeight={600}>
           Felix
@@ -50,25 +50,25 @@ const SidebarNav = () => {
 
       <Stack spacing={1} flexDir={['row', 'row', 'column']} pb={[10, 10, 0]} align='center'>
         <NavLink href='https://github.com/felixstenian' target='_blank' mt={[1, 0]}>
-          <Icon as={RiGithubFill} color='#69FFDB' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
+          <Icon as={RiGithubFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
         </NavLink>
 
         <NavLink href='https://www.linkedin.com/in/felixstenian/' target='_blank'>
-          <Icon as={RiLinkedinFill} color='#69FFDB' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
+          <Icon as={RiLinkedinFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
         </NavLink>
 
         <NavLink href='mailto:felixstenian.dev@gmail.com.br' target='_blank'>
-          <Icon as={RiMailFill} color='#69FFDB' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
+          <Icon as={RiMailFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
         </NavLink>
 
         <NavLink href='https://wa.me/5582988507881?text=Olá%20Felix !' target='_blank'>
-          <Icon as={RiWhatsappFill} color='#69FFDB' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
+          <Icon as={RiWhatsappFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
         </NavLink>
 
         <NavLink href='https://github.com/felixstenian' target='_blank'>
-          <Icon as={RiTelegramFill} color='#69FFDB' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
+          <Icon as={RiTelegramFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
         </NavLink>
-        <Divider orientation='vertical' borderColor='#69FFDB' height={[0, 0, '50px']} />
+        <Divider orientation='vertical' borderColor='primary' height={[0, 0, '50px']} />
       </Stack>
     </Flex>
   )

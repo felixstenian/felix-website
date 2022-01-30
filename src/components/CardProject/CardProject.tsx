@@ -49,7 +49,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                 ml={[0, 0, 8, 0]}
               >
                 {!isWideVersion && (
-                  <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={5}>
+                  <Text fontWeight={500} fontSize={26} color='primary' lineHeight='30px' mb={5}>
                     {' '}
                     {title}{' '}
                   </Text>
@@ -73,7 +73,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   pr={[5, 5, 0]}
                 >
                   {isWideVersion && (
-                    <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={2}>
+                    <Text fontWeight={500} fontSize={26} color='primary' lineHeight='30px' mb={2}>
                       {' '}
                       {title}{' '}
                     </Text>
@@ -92,10 +92,10 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   </HStack>
                   <HStack mt={2}>
                     <Link href={repo?.url} target='_blank'>
-                      <Icon as={RiGithubFill} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
+                      <Icon as={RiGithubFill} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
                     </Link>
                     <Link href={link?.url} target='_blank'>
-                      <Icon as={RiLinkM} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
+                      <Icon as={RiLinkM} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
                     </Link>
                   </HStack>
                 </Flex>
@@ -112,7 +112,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
               >
                 {!isWideVersion && (
                   <>
-                    <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={5}>
+                    <Text fontWeight={500} fontSize={26} color='primary' lineHeight='30px' mb={5}>
                       {title}
                     </Text>
                     <Flex w={['100%', '100%', '85%', '60%']} pl={[5, 5, 0]}>
@@ -130,7 +130,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   pr={[5, 5, 0]}
                 >
                   {isWideVersion && (
-                    <Text fontWeight={500} fontSize={26} color='#69FFDB' lineHeight='30px' mb={2}>
+                    <Text fontWeight={500} fontSize={26} color='primary' lineHeight='30px' mb={2}>
                       {' '}
                       {title}{' '}
                     </Text>
@@ -157,10 +157,10 @@ const CardProject = ({ projects }: CardProjectProps) => {
                   </HStack>
                   <HStack mt={2}>
                     <Link href={repo?.url} target='_blank'>
-                      <Icon as={RiGithubFill} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
+                      <Icon as={RiGithubFill} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
                     </Link>
                     <Link href={link?.url} target='_blank'>
-                      <Icon as={RiLinkM} color='#69FFDB' fontSize={26} _hover={{ color: '#ffffff' }} />
+                      <Icon as={RiLinkM} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
                     </Link>
                   </HStack>
                 </Flex>
