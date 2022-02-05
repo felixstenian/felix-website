@@ -1,5 +1,6 @@
 import { Flex, Box, Text, Image, Stack, Icon, Divider } from '@chakra-ui/react'
 import { RiGithubFill, RiLinkedinFill, RiMailFill, RiTelegramFill, RiWhatsappFill } from 'react-icons/ri'
+
 import { NavLink } from './NavLink'
 
 const SidebarNav = () => {
