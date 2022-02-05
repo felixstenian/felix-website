@@ -1,5 +1,5 @@
 <h1>
-  <a href="https://https://felixstenian.github.io/site">
+  <a href="https://https://felixstenian.github.io/site" target="_blank">
     Felix.me
   </a>
 </h1>
