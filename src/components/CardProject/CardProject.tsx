@@ -52,8 +52,8 @@ const CardProject = ({ projects }: CardProjectProps) => {
                 align='flex-start'
                 mt={['70px', 50]}
                 ml={[0, 0, 8, 0]}
-                onMouseEnter={play} 
-                onMouseLeave={stop}
+                onMouseEnter={() => play()} 
+                onMouseLeave={() => stop()}
               >
                 {!isWideVersion && (
                   <Text fontWeight={500} fontSize={26} color='primary' lineHeight='30px' mb={5}>
