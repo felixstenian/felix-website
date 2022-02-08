@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 const MotionFlex = motion(Flex)
 interface Project {
   uid: string,
-  tags: [],
+  tags: any,
   data: {
     title: string,
     description: string,
