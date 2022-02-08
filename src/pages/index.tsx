@@ -1,6 +1,7 @@
 import { Box, Button, Flex, flexbox, Image, Text, useBreakpointValue } from '@chakra-ui/react'
 import { CopyRight, Header, Sidebar } from '../components'
 import { motion } from 'framer-motion'
+import { NavLink } from '../components/Sidebar/NavLink'
 
 const MotionFlex = motion(Flex)
 
@@ -57,22 +58,25 @@ export default function Home() {
             Sou um desenvolvedor front-end especializado em criar experiências digitais excepcionais.
           </Text>
         </Flex>
-        <Button
-          mt={20}
-          width={200}
-          height={50}
-          fontWeight={300}
-          variant='outline'
-          borderColor='primary'
-          color='primary'
-          _hover={{
-            bg: 'primary',
-            color: '#0A1A2E',
-            transition: 'background 0.5s'
-          }}
-        >
-          CONTATO
-        </Button>
+        <NavLink href='/contact'>
+          <Button
+            mt={20}
+            width={200}
+            height={50}
+            fontWeight={500}
+            variant='outline'
+            borderColor='primary'
+            color='bgSideBar'
+            bg='primary'
+            _hover={{
+              bg: 'bgSideBar',
+              color: 'primary',
+              transition: 'background 0.5s'
+            }}
+          >
+            CONTATO
+          </Button>
+        </NavLink>
       </MotionFlex>
       <CopyRight />
     </Flex>
