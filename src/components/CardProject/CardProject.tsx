@@ -3,7 +3,6 @@ import { RiGithubFill, RiLinkM } from 'react-icons/ri'
 import { motion } from 'framer-motion'
 
 import useSound from 'use-sound'
-import popDownSound from '../../../public/sounds/pop-down.mp3'
 
 const MotionBox = motion(Box)
 
@@ -29,7 +28,7 @@ interface CardProjectProps {
 }
 
 const CardProject = ({ projects }: CardProjectProps) => {
-  const soundUrl = popDownSound
+  const soundUrl = '/sounds/pop-down.mp3'
   const [play, { stop }] = useSound(soundUrl, { volume: 0.5 })
 
   const isWideVersion = useBreakpointValue({
