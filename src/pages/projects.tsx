@@ -43,7 +43,6 @@ interface ProjectProps {
 
 const Projects = ({ result }: ProjectProps) => {
   const { projects, isPagination } = result
-  console.log({ isPagination: typeof isPagination })
 
   const [projectsData, setProjectsData] = useState<Project[]>(projects)
   const [nextPage, setNextPage] = useState(isPagination)
