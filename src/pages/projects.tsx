@@ -8,17 +8,23 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const MotionFlex = motion(Flex)
-interface Project {
-  uid: string,
+type Project = {
+  // eslint-disable-next-line prettier/prettier
+  uid?: string,
+  // eslint-disable-next-line prettier/prettier
   tags: [],
   data: {
+    // eslint-disable-next-line prettier/prettier
     title: string,
+    // eslint-disable-next-line prettier/prettier
     description: string,
     thumb: {
       url: string
+      // eslint-disable-next-line prettier/prettier
     },
     repo: {
       url: string
+      // eslint-disable-next-line prettier/prettier
     },
     link: {
       url: string
@@ -27,18 +33,19 @@ interface Project {
 }
 
 interface ResultProps {
-  data: Project[]
-  next_page: string | null;
+  // eslint-disable-next-line prettier/prettier
+  projects: Project[],
+  isPagination: string | null
 }
 interface ProjectProps {
-  result: ResultProps;
+  result: ResultProps
 }
 
 const Projects = ({ result }: ProjectProps) => {
-  const { data, next_page } = result;
+  const { projects, isPagination } = result
 
-  const [projects, setProjects] = useState<Project[]>(data)
-  const [nextPage, setNextPage] = useState<string>(next_page)
+  const [projectsData, setProjectsData] = useState<Project[]>(projects)
+  const [nextPage, setNextPage] = useState(isPagination)
 
   const isWideVersion = useBreakpointValue({
     base: true,
@@ -50,7 +57,8 @@ const Projects = ({ result }: ProjectProps) => {
     fetch(nextPage)
       .then(response => response.json())
       .then(data => {
-        const newProject = data?.results?.map(project => {
+        const { results, next_page } = data
+        const newProject = results?.map(project => {
           return {
             slug: project.uid,
             tags: project.tags,
@@ -63,43 +71,42 @@ const Projects = ({ result }: ProjectProps) => {
             }
           }
         })
-        setNextPage(data.next_page)
-        setProjects([...projects, ...newProject])
+        setNextPage(next_page || null)
+        setProjectsData([...projectsData, ...newProject])
       })
   }
-  
+
   return (
     <Flex>
-      { !!isWideVersion && <Header /> }
+      {!!isWideVersion && <Header />}
       <Sidebar />
-      <MotionFlex 
-        align='center' 
-        w='100%' 
-        flexDir='column' 
-        mx={50} 
-        mt={[20,20,0]}
-
-        initial="initial"
-        animate="animate"
+      <MotionFlex
+        align='center'
+        w='100%'
+        flexDir='column'
+        mx={50}
+        mt={[20, 20, 0]}
+        initial='initial'
+        animate='animate'
         variants={{
           initial: {
-            opacity: 0,
+            opacity: 0
           },
           animate: {
-            opacity: 1,
-          },
+            opacity: 1
+          }
         }}
         transition={{ duration: 0.5 }}
       >
-        <CardProject projects={projects} />
+        <CardProject projects={projectsData} />
         <Box mt={50}>
-          { !!nextPage &&
-            <Button 
-              width={200} 
-              height={50} 
-              fontWeight={300} 
-              variant='outline' 
-              borderColor='primary' 
+          {!!nextPage && (
+            <Button
+              width={200}
+              height={50}
+              fontWeight={300}
+              variant='outline'
+              borderColor='primary'
               color='primary'
               onClick={pagination}
               _hover={{
@@ -111,7 +118,7 @@ const Projects = ({ result }: ProjectProps) => {
             >
               VER MAIS
             </Button>
-          }
+          )}
         </Box>
       </MotionFlex>
       <CopyRight />
@@ -122,21 +129,13 @@ const Projects = ({ result }: ProjectProps) => {
 export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
   const prismic = getPrismicClient()
 
-  const response = await prismic.query([
-    Prismic.predicates.at('document.type', 'projects')
-  ], {
-    fetch: [
-      'projects.title',
-      'projects.description',
-      'projects.thumbnail',
-      'projects.repo',
-      'projects.app_link',
-    ],
+  const response = await prismic.query([Prismic.predicates.at('document.type', 'projects')], {
+    fetch: ['projects.title', 'projects.description', 'projects.thumbnail', 'projects.repo', 'projects.app_link'],
     orderings: '[document.first_publication_date desc]',
     pageSize: 3
   })
 
-  const data = response?.results?.map(project => {
+  const projects = response?.results?.map((project: any) => {
     return {
       uid: project.uid,
       tags: project.tags,
@@ -153,8 +152,8 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
   return {
     props: {
       result: {
-        data,
-        next_page: response.next_page,
+        projects: projects || [],
+        isPagination: response?.next_page || null
       }
     },
     revalidate: 60 * 30
@@ -162,4 +161,3 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
 }
 
 export default Projects
-          

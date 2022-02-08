@@ -3,22 +3,27 @@ import { RiGithubFill, RiLinkM } from 'react-icons/ri'
 import { motion } from 'framer-motion'
 
 import useSound from 'use-sound'
-import popDownSound from '../../../public/sounds/pop-down.mp3'
 
 const MotionBox = motion(Box)
 
 type Project = {
-  tags: []
-  uid: string
+  // eslint-disable-next-line prettier/prettier
+  uid?: string,
+  // eslint-disable-next-line prettier/prettier
+  tags: [],
   data: {
-    title: string
-    description: string
+    // eslint-disable-next-line prettier/prettier
+    title: string,
+    // eslint-disable-next-line prettier/prettier
+    description: string,
     thumb: {
       url: string
-    }
+      // eslint-disable-next-line prettier/prettier
+    },
     repo: {
       url: string
-    }
+      // eslint-disable-next-line prettier/prettier
+    },
     link: {
       url: string
     }
@@ -29,7 +34,7 @@ interface CardProjectProps {
 }
 
 const CardProject = ({ projects }: CardProjectProps) => {
-  const soundUrl = popDownSound
+  const soundUrl = '/sounds/pop-down.mp3'
   const [play, { stop }] = useSound(soundUrl, { volume: 0.5 })
 
   const isWideVersion = useBreakpointValue({
@@ -53,8 +58,8 @@ const CardProject = ({ projects }: CardProjectProps) => {
                 align='flex-start'
                 mt={['70px', 50]}
                 ml={[0, 0, 8, 0]}
-                onMouseEnter={play} 
-                onMouseLeave={stop}
+                onMouseEnter={() => play()}
+                onMouseLeave={() => stop()}
               >
                 {!isWideVersion && (
                   <Text fontWeight={500} fontSize={26} color='primary' lineHeight='30px' mb={5}>
