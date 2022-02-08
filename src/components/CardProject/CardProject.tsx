@@ -7,17 +7,23 @@ import useSound from 'use-sound'
 const MotionBox = motion(Box)
 
 type Project = {
-  tags: []
-  uid: string
+  // eslint-disable-next-line prettier/prettier
+  uid?: string,
+  // eslint-disable-next-line prettier/prettier
+  tags: [],
   data: {
-    title: string
-    description: string
+    // eslint-disable-next-line prettier/prettier
+    title: string,
+    // eslint-disable-next-line prettier/prettier
+    description: string,
     thumb: {
       url: string
-    }
+      // eslint-disable-next-line prettier/prettier
+    },
     repo: {
       url: string
-    }
+      // eslint-disable-next-line prettier/prettier
+    },
     link: {
       url: string
     }
@@ -52,7 +58,7 @@ const CardProject = ({ projects }: CardProjectProps) => {
                 align='flex-start'
                 mt={['70px', 50]}
                 ml={[0, 0, 8, 0]}
-                onMouseEnter={() => play()} 
+                onMouseEnter={() => play()}
                 onMouseLeave={() => stop()}
               >
                 {!isWideVersion && (
