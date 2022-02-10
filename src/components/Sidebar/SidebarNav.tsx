@@ -62,13 +62,6 @@ const SidebarNav = () => {
           <Icon as={RiMailFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
         </NavLink>
 
-        <NavLink href='https://wa.me/5582988507881?text=Olá%20Felix !' target='_blank'>
-          <Icon as={RiWhatsappFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
-        </NavLink>
-
-        <NavLink href='https://github.com/felixstenian' target='_blank'>
-          <Icon as={RiTelegramFill} color='primary' fontSize={28} _hover={{ color: '#ffffff' }} mx={[2, 2, 0]} />
-        </NavLink>
         <Divider orientation='vertical' borderColor='primary' height={[0, 0, '50px']} />
       </Stack>
     </Flex>
