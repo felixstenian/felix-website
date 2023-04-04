@@ -1,13 +1,15 @@
-import { Box, Button, Flex, useBreakpointValue } from '@chakra-ui/react'
+import { useState } from 'react'
 import { GetStaticProps } from 'next'
-import { CardProject, CopyRight, Header, Sidebar } from '../components'
-import { getPrismicClient } from '../services/prismic'
+import { Box, Button, Flex, useBreakpointValue } from '@chakra-ui/react'
 import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+import { getPrismicClient } from '../services/prismic'
+import { CardProject, CopyRight, Header, Sidebar } from '../components'
+
 const MotionFlex = motion(Flex)
+
 type Project = {
   // eslint-disable-next-line prettier/prettier
   uid?: string,

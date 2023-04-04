@@ -55,7 +55,7 @@ export default function Home() {
         </MotionFlex>
         <Flex mt={10}>
           <Text fontSize={24} lineHeight='28px'>
-            Sou um desenvolvedor front-end especializado em criar experiências digitais excepcionais.
+            Sou um Software Developer especializado em criar experiências digitais excepcionais.
           </Text>
         </Flex>
         <NavLink href='/contact'>

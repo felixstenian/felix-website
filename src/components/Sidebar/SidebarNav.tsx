@@ -1,5 +1,5 @@
 import { Flex, Box, Text, Image, Stack, Icon, Divider } from '@chakra-ui/react'
-import { RiGithubFill, RiLinkedinFill, RiMailFill, RiTelegramFill, RiWhatsappFill } from 'react-icons/ri'
+import { RiGithubFill, RiLinkedinFill, RiMailFill } from 'react-icons/ri'
 
 import { NavLink } from './NavLink'
 
@@ -22,7 +22,7 @@ const SidebarNav = () => {
           Felix
         </Text>
         <Text fontSize={14} lineHeight='16px' pb={3}>
-          Web Developer
+          Software Developer
         </Text>
       </Stack>
 

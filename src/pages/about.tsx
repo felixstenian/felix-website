@@ -52,7 +52,7 @@ const About = () => {
         </motion.div>
 
         <Stack mt={10} spacing={4} maxWidth={610} mb={16}>
-          <Text fontSize={22}>Sou um desenvolvedor front-end localizado em Maceió, Alagoas.</Text>
+          <Text fontSize={22}>Sou um Software Developer localizado em Maceió, Alagoas.</Text>
           <Text fontSize={22}>
             Quando não estou programando e tentando solucionar problemas, você pode me encontrar praticando esportes,
             experimentando novas receitas de comida, realizando atividades ao ar livre ou assistindo séries e filmes.

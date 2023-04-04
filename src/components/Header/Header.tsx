@@ -6,7 +6,7 @@ const Header = () => {
       <Box align='center'>
         <Image src='/logo_1x.png' alt='Felix-Logo' position='relative' w='25px' />
         <Text fontSize={14} lineHeight='16px' mt={3}>
-          Web Developer
+          Software Developer
         </Text>
       </Box>
     </Flex>
