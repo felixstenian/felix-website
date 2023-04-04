@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel='shortcut icon' href='/favicon.ico' />
-        <title>Felix | Web Developer</title>
+        <title>Felix | Software Developer</title>
       </Head>
       <ChakraProvider theme={theme}>
         <SidebarDrawerProvider>

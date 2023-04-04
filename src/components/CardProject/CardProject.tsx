@@ -104,12 +104,16 @@ const CardProject = ({ projects }: CardProjectProps) => {
                     ))}
                   </HStack>
                   <HStack mt={2}>
-                    <Link href={repo?.url} target='_blank'>
-                      <Icon as={RiGithubFill} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
-                    </Link>
-                    <Link href={link?.url} target='_blank'>
-                      <Icon as={RiLinkM} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
-                    </Link>
+                    {!!repo?.url && (
+                      <Link href={repo?.url} target='_blank'>
+                        <Icon as={RiGithubFill} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
+                      </Link>
+                    )}
+                    {!!link?.url && (
+                      <Link href={link?.url} target='_blank'>
+                        <Icon as={RiLinkM} color='primary' fontSize={26} _hover={{ color: '#ffffff' }} />
+                      </Link>
+                    )}
                   </HStack>
                 </Flex>
               </Flex>
